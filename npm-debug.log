@@ -1,24 +1,187 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'version',
-1 verbose cli   '0.0.3' ]
+1 verbose cli   'publish' ]
 2 info using npm@1.3.11
 3 info using node@v0.10.21
-4 error Error: Git working directory not clean.
-4 error M npm-debug.log
-4 error     at c:\Program Files\nodejs\node_modules\npm\lib\version.js:97:35
-4 error     at ChildProcess.exithandler (child_process.js:635:7)
-4 error     at ChildProcess.EventEmitter.emit (events.js:98:17)
-4 error     at maybeClose (child_process.js:735:16)
-4 error     at Process.ChildProcess._handle.onexit (child_process.js:802:5)
-5 error If you need help, you may report this log at:
-5 error     <http://github.com/isaacs/npm/issues>
-5 error or email it to:
-5 error     <npm-@googlegroups.com>
-6 error System Windows_NT 6.2.9200
-7 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "0.0.3"
-8 error cwd C:\sites\Coffee-Stir
-9 error node -v v0.10.21
-10 error npm -v 1.3.11
-11 verbose exit [ 1, true ]
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . C:\Users\shavyg2\AppData\Roaming\npm-cache\3a52ce78-.lock
+10 verbose tar pack [ 'C:\\Users\\shavyg2\\AppData\\Local\\Temp\\npm-5864-TF4xHr7p\\1397165601212-0.6478110076859593\\tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. C:\Users\shavyg2\AppData\Roaming\npm-cache\1f1177db-tar.lock
+15 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+16 verbose lock tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz C:\Users\shavyg2\AppData\Roaming\npm-cache\ec119112-01212-0-6478110076859593-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+20 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+21 verbose tar unpack C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+22 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+23 verbose lock tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package C:\Users\shavyg2\AppData\Roaming\npm-cache\aa0f371d-01212-0-6478110076859593-package.lock
+24 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+25 verbose lock tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz C:\Users\shavyg2\AppData\Roaming\npm-cache\ec119112-01212-0-6478110076859593-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+31 silly gunzTarPerm extractEntry README.md
+32 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+33 silly gunzTarPerm extractEntry build-test.sh
+34 silly gunzTarPerm modified mode [ 'build-test.sh', 438, 420 ]
+35 silly gunzTarPerm extractEntry .idea/.name
+36 silly gunzTarPerm modified mode [ '.idea/.name', 438, 420 ]
+37 silly gunzTarPerm extractEntry .idea/Coffee-Stir.iml
+38 silly gunzTarPerm modified mode [ '.idea/Coffee-Stir.iml', 438, 420 ]
+39 silly gunzTarPerm extractEntry .idea/encodings.xml
+40 silly gunzTarPerm modified mode [ '.idea/encodings.xml', 438, 420 ]
+41 silly gunzTarPerm extractEntry .idea/misc.xml
+42 silly gunzTarPerm modified mode [ '.idea/misc.xml', 438, 420 ]
+43 silly gunzTarPerm extractEntry .idea/modules.xml
+44 silly gunzTarPerm modified mode [ '.idea/modules.xml', 438, 420 ]
+45 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+46 silly gunzTarPerm modified mode [ '.idea/scopes/scope_settings.xml', 438, 420 ]
+47 silly gunzTarPerm extractEntry .idea/vcs.xml
+48 silly gunzTarPerm modified mode [ '.idea/vcs.xml', 438, 420 ]
+49 silly gunzTarPerm extractEntry .idea/workspace.xml
+50 silly gunzTarPerm modified mode [ '.idea/workspace.xml', 438, 420 ]
+51 silly gunzTarPerm extractEntry bin/cli.js
+52 silly gunzTarPerm modified mode [ 'bin/cli.js', 438, 420 ]
+53 silly gunzTarPerm extractEntry build-release.sh
+54 silly gunzTarPerm modified mode [ 'build-release.sh', 438, 420 ]
+55 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+56 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+57 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+58 silly lockFile ec119112-01212-0-6478110076859593-tmp-tgz tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\tmp.tgz
+59 verbose tar pack [ 'C:\\Users\\shavyg2\\AppData\\Roaming\\npm-cache\\coffee-stir\\0.0.2\\package.tgz',
+59 verbose tar pack   'C:\\Users\\shavyg2\\AppData\\Local\\Temp\\npm-5864-TF4xHr7p\\1397165601212-0.6478110076859593\\package' ]
+60 verbose tarball C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+61 verbose folder C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+62 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+63 verbose lock tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package C:\Users\shavyg2\AppData\Roaming\npm-cache\aa0f371d-01212-0-6478110076859593-package.lock
+64 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+65 verbose lock tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz C:\Users\shavyg2\AppData\Roaming\npm-cache\c347e1d9-he-coffee-stir-0-0-2-package-tgz.lock
+66 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+67 silly lockFile aa0f371d-01212-0-6478110076859593-package tar://C:\Users\shavyg2\AppData\Local\Temp\npm-5864-TF4xHr7p\1397165601212-0.6478110076859593\package
+68 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+69 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+70 silly lockFile 236b8e29--cache-coffee-stir-0-0-2-package C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+71 verbose lock C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package C:\Users\shavyg2\AppData\Roaming\npm-cache\236b8e29--cache-coffee-stir-0-0-2-package.lock
+72 silly lockFile 236b8e29--cache-coffee-stir-0-0-2-package C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+73 silly lockFile 236b8e29--cache-coffee-stir-0-0-2-package C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+74 verbose tar unpack C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+75 silly lockFile 1cc54fe4--cache-coffee-stir-0-0-2-package tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+76 verbose lock tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package C:\Users\shavyg2\AppData\Roaming\npm-cache\1cc54fe4--cache-coffee-stir-0-0-2-package.lock
+77 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+78 verbose lock tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz C:\Users\shavyg2\AppData\Roaming\npm-cache\c347e1d9-he-coffee-stir-0-0-2-package-tgz.lock
+79 silly gunzTarPerm modes [ '755', '644' ]
+80 silly gunzTarPerm extractEntry package.json
+81 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+82 silly gunzTarPerm extractEntry .npmignore
+83 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+84 silly gunzTarPerm extractEntry README.md
+85 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+86 silly gunzTarPerm extractEntry .idea/.name
+87 silly gunzTarPerm modified mode [ '.idea/.name', 438, 420 ]
+88 silly gunzTarPerm extractEntry .idea/Coffee-Stir.iml
+89 silly gunzTarPerm modified mode [ '.idea/Coffee-Stir.iml', 438, 420 ]
+90 silly gunzTarPerm extractEntry .idea/encodings.xml
+91 silly gunzTarPerm modified mode [ '.idea/encodings.xml', 438, 420 ]
+92 silly gunzTarPerm extractEntry .idea/misc.xml
+93 silly gunzTarPerm modified mode [ '.idea/misc.xml', 438, 420 ]
+94 silly gunzTarPerm extractEntry .idea/modules.xml
+95 silly gunzTarPerm modified mode [ '.idea/modules.xml', 438, 420 ]
+96 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+97 silly gunzTarPerm modified mode [ '.idea/scopes/scope_settings.xml', 438, 420 ]
+98 silly gunzTarPerm extractEntry .idea/vcs.xml
+99 silly gunzTarPerm modified mode [ '.idea/vcs.xml', 438, 420 ]
+100 silly gunzTarPerm extractEntry .idea/workspace.xml
+101 silly gunzTarPerm modified mode [ '.idea/workspace.xml', 438, 420 ]
+102 silly gunzTarPerm extractEntry bin/cli.js
+103 silly gunzTarPerm modified mode [ 'bin/cli.js', 438, 420 ]
+104 silly gunzTarPerm extractEntry build-release.sh
+105 silly gunzTarPerm modified mode [ 'build-release.sh', 438, 420 ]
+106 silly gunzTarPerm extractEntry build-test.sh
+107 silly gunzTarPerm modified mode [ 'build-test.sh', 438, 420 ]
+108 silly lockFile 1cc54fe4--cache-coffee-stir-0-0-2-package tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+109 silly lockFile 1cc54fe4--cache-coffee-stir-0-0-2-package tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package
+110 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+111 silly lockFile c347e1d9-he-coffee-stir-0-0-2-package-tgz tar://C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+112 verbose chmod C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz 644
+113 silly chown skipping for windows C:\Users\shavyg2\AppData\Roaming\npm-cache\coffee-stir\0.0.2\package.tgz
+114 silly lockFile 3a52ce78- .
+115 silly lockFile 3a52ce78- .
+116 silly publish { name: 'coffee-stir',
+116 silly publish   version: '0.0.2',
+116 silly publish   description: 'This is a library to merge, watch and compile coffeescript files.',
+116 silly publish   keyword:
+116 silly publish    [ 'coffeescript',
+116 silly publish      'coffee-script',
+116 silly publish      'preprocessor',
+116 silly publish      'bundle',
+116 silly publish      'beastjavascript',
+116 silly publish      'concat',
+116 silly publish      'merge',
+116 silly publish      'include',
+116 silly publish      'add' ],
+116 silly publish   bin: { 'coffee-stir': 'bin/cli.js' },
+116 silly publish   author:
+116 silly publish    { name: 'Shavauhn Gabay',
+116 silly publish      email: 'shavyg2@gmail.com',
+116 silly publish      url: 'http://www.shavauhn.com' },
+116 silly publish   devDependencies: { commander: '2.*', chokidar: '0.*' },
+116 silly publish   main: 'coffee-stir',
+116 silly publish   repository:
+116 silly publish    { type: 'git',
+116 silly publish      url: 'https://github.com/BeastJavaScript/Coffee-Stir.git' },
+116 silly publish   readme: 'Coffee-Stir\r\n==================\r\n\r\n![alt](https://raw.githubusercontent.com/BeastJavaScript/Coffee-Stir/master/logo/coffee-stir.png)\r\n\r\nCoffee-stir is a small nodejs plugin that will allow you to merge CoffeeScript files into one file that you can then compile.\r\n\r\n\r\n##Getting Started\r\n\r\nyou can download the package on npm.\r\n\r\n    npm install -g coffee-stir\r\n    \r\n    \r\nInside your files all you need to do it add a simple include.\r\n\r\n    #coffeescript file\r\n    #include MyFile.coffee "text here is ignored. Write a label"\r\n    \r\nTo use in the command line you can type the following\r\n\r\n    coffee-stir <myfile.coffee>\r\n    \r\n    example\r\n    \r\n    coffee-stir greatest-file.coffee\r\n    \r\n    \r\n<br>\r\n\r\nThis will load the file greatest-file and parse it for include.\r\nThe parse will parse file and align them so that the dependecies are in the correct order for the final file\r\n\r\n\r\n\r\n\r\n##Options\r\n\r\nuse -o <filename.coffee>\r\nThis will place the merge files into the following file\r\n\r\n    example\r\n    \r\n    coffee-stir -o ../someFolder/merged.coffee\r\n    \r\n    other examples\r\n\r\nYou can set it to watch the files as well\r\n\r\n    coffee-stir -wo ../someFolder/merged.coffee\r\n\r\nOptions are \r\n\r\n-v --verbose\r\n\r\n-o --output\r\n\r\n-w --watch\r\n\r\n\r\nYou can have multiple files\r\n\r\ncoffee-stir <file1> <file2> <file3>\r\n\r\n    \r\nnew files that are included with an include will be parsed as well\r\n\r\n\r\n\r\n\r\n    \r\n    \r\n\r\n\r\n###Notes\r\n\r\ncoffee-stir is the part of the a library from BeastJavaScript\r\nBeastJavaScript created by Shavauhn Gabay\r\n\r\n\r\n\r\n#License\r\nThe MIT License\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the "Software"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in\r\nall copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\r\nTHE SOFTWARE.',
+116 silly publish   readmeFilename: 'README.md',
+116 silly publish   bugs: { url: 'https://github.com/BeastJavaScript/Coffee-Stir/issues' },
+116 silly publish   _id: 'coffee-stir@0.0.2',
+116 silly publish   dist: { shasum: '91ffa5931a99cbe26be7b3f5b64c829f6ce46cba' },
+116 silly publish   _from: '.' }
+117 verbose url raw coffee-stir
+118 verbose url resolving [ 'https://registry.npmjs.org/', './coffee-stir' ]
+119 verbose url resolved https://registry.npmjs.org/coffee-stir
+120 info trying registry request attempt 1 at 17:33:21
+121 http PUT https://registry.npmjs.org/coffee-stir
+122 http 201 https://registry.npmjs.org/coffee-stir
+123 verbose url raw coffee-stir
+124 verbose url resolving [ 'https://registry.npmjs.org/', './coffee-stir' ]
+125 verbose url resolved https://registry.npmjs.org/coffee-stir
+126 info trying registry request attempt 1 at 17:33:21
+127 http GET https://registry.npmjs.org/coffee-stir
+128 http 200 https://registry.npmjs.org/coffee-stir
+129 error publish fail Cannot publish over existing version.
+129 error publish fail Update the 'version' field in package.json and try again.
+129 error publish fail
+129 error publish fail If the previous version was published in error, see:
+129 error publish fail     npm help unpublish
+129 error publish fail
+129 error publish fail To automatically increment version numbers, see:
+129 error publish fail     npm help version
+130 error System Windows_NT 6.2.9200
+131 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+132 error cwd C:\sites\Coffee-Stir
+133 error node -v v0.10.21
+134 error npm -v 1.3.11
+135 error code EPUBLISHCONFLICT
+136 verbose exit [ 1, true ]
