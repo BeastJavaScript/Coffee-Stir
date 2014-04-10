@@ -1,7 +1,7 @@
 Coffee-Stir
 ==================
 
-![alt](../logo/coffee-stir.png)
+![alt](https://raw.githubusercontent.com/BeastJavaScript/Coffee-Stir/master/logo/coffee-stir.png)
 
 Coffee-stir is a small nodejs plugin that will allow you to merge CoffeeScript files into one file that you can then compile.
 
