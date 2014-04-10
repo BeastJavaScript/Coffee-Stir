@@ -1,21 +1,31 @@
 {
-    "name":"coffee-stir",
-    "version":"0.0.2",
-    "description":"This is a library to merge, watch and compile coffeescript files.",
-    "keyword":["coffeescript","coffee-script","preprocessor","bundle","beastjavascript","concat","merge","include","add"],
-    "bin":"bin/cli.js",
-    "author":{
-        "name":"Shavauhn Gabay",
-        "email":"shavyg2@gmail.com",
-        "url":"http://www.shavauhn.com"
-    },
-    "devDependencies":{
-        "commander":"2.*",
-        "chokidar":"0.*"
-    },
-    "main":"coffee-stir",
-    "repository" :
-    { "type" : "git",
-       "url" : "https://github.com/BeastJavaScript/Coffee-Stir.git"
-    }
+  "name": "coffee-stir",
+  "version": "0.0.3",
+  "description": "This is a library to merge, watch and compile coffeescript files.",
+  "keyword": [
+    "coffeescript",
+    "coffee-script",
+    "preprocessor",
+    "bundle",
+    "beastjavascript",
+    "concat",
+    "merge",
+    "include",
+    "add"
+  ],
+  "bin": "bin/cli.js",
+  "author": {
+    "name": "Shavauhn Gabay",
+    "email": "shavyg2@gmail.com",
+    "url": "http://www.shavauhn.com"
+  },
+  "devDependencies": {
+    "commander": "2.*",
+    "chokidar": "0.*"
+  },
+  "main": "coffee-stir",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeastJavaScript/Coffee-Stir.git"
+  }
 }
