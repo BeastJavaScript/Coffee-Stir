@@ -19,7 +19,8 @@ if program.args
 
 list= new List()
 fileFinder=[]
-
+added=[];
+unadded=[];
 recursive=(file)->
   if program.verbose
     console.log "parsing #{file}"
@@ -30,13 +31,17 @@ recursive=(file)->
   for f in fileFinder[fileFinder.length-1].includeStack
     arguments.callee(f.required)
 
-bundle=->
+process.bundle=->
   for bundle in fileFinder
     for stack in bundle.includeStack
       list.append stack
+      if program.watch
+        unless stack.required in added
+          unadded.push stack.required
+        unless stack.caller in added
+          unadded.push stack.caller
 
-
-output=->
+process.output=->
   unless list.graph
     console.log "Nothing to output?"
     process.exit(0)
@@ -56,22 +61,33 @@ output=->
       fs.appendFile(program.output,data+"\n")
     else
       console.log data
-  console.log "Wrote to #{program.output} complete"
+  console.log "wrote to #{program.output} complete"
 
 if file.length is 0
   console.log "No Input"
 
+watchMaster=null;
+watcher=->
+  if program.verbose
+    console.log "watch has been added"
+  if program.watch
+    for file in unadded
+      unless watcthMaster?
+        watchMaster=chokidar.watch(file,{persistent:true})
+        watchMaster.on("change",(newfile)=>
+          recursive(newfile)
+          process.bundle()
+          process.output()
+        )
+
+      watchMaster.add file
+      added.push file
+    unadded=[]
+    watchMaster.close()
+
 for f in file
   recursive(f)
-bundle()
-output()
+process.bundle()
+process.output()
+watcher()
 
-
-if program.watch
-  watcher=chokidar.watch()
-  watcher.on("change",(file)->
-    recursive(file)
-    output()
-  )
-  for file in list.graph
-    watcher.add file

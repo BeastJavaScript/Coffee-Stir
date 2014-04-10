@@ -1,4 +1,3 @@
-
 ###
   This class is to compile the Stacked Parser Files
 ###
