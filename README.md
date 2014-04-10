@@ -1,7 +1,7 @@
 Coffee-Stir
 ==================
 
-![alt](link)
+![alt](../logo/coffee-stir.png)
 
 Coffee-stir is a small nodejs plugin that will allow you to merge CoffeeScript files into one file that you can then compile.
 
@@ -11,22 +11,22 @@ Coffee-stir is a small nodejs plugin that will allow you to merge CoffeeScript f
 you can download the package on npm.
 
     npm install -g coffee-stir
-
-
+    
+    
 Inside your files all you need to do it add a simple include.
 
     #coffeescript file
     #include MyFile.coffee "text here is ignored. Write a label"
-
+    
 To use in the command line you can type the following
 
     coffee-stir <myfile.coffee>
-
+    
     example
-
+    
     coffee-stir greatest-file.coffee
-
-
+    
+    
 <br>
 
 This will load the file greatest-file and parse it for include.
@@ -41,16 +41,16 @@ use -o <filename.coffee>
 This will place the merge files into the following file
 
     example
-
+    
     coffee-stir -o ../someFolder/merged.coffee
-
+    
     other examples
 
 You can set it to watch the files as well
 
     coffee-stir -wo ../someFolder/merged.coffee
 
-Options are
+Options are 
 
 -v --verbose
 
@@ -63,14 +63,14 @@ You can have multiple files
 
 coffee-stir <file1> <file2> <file3>
 
-
+    
 new files that are included with an include will be parsed as well
 
 
 
 
-
-
+    
+    
 
 
 ###Notes
