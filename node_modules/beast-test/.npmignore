@@ -1,0 +1,6 @@
+.idea/
+test
+src
+doc
+*.sh
+**/*.sh
