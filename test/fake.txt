@@ -1,0 +1,124 @@
+
+###
+  This class is to compile the Stacked Parser Files
+###
+class Stacker
+
+  ###
+    @property includes [Array<Parser>,Parser] This is the parser files that need to be included
+  ###
+  constructor:(includes...)->
+    if includes instanceof Array
+      for inc in includes
+        @includes=includes
+
+  includes:[]
+
+  addIncludes:(more)->
+    for file in more
+      @includes.push(file)
+
+  stack:->
+    list= new List()
+
+    for include in @includes
+      list.append(include)
+
+if module? and module.exports?
+  module.exports.Stacker=Stacker
+
+fs= require "fs"
+
+class FileScanner
+  constructor:(@path,@watch)->
+    @files=[]
+    @fileExt=["coffee"]
+    @fileExt=@fileExt.join("|")
+
+    @scan()
+
+
+  scan:()->
+    data=fs.readFileSync(@path,{encoding:"utf-8"})
+    @lines=data.split("\n")
+    @parse()
+    @complete()
+
+
+  parse:()->
+    FileScanner.test ?= new RegExp("\ *?
+    for line in @lines
+      @result= FileScanner.test.exec(line)
+      if @result isnt null
+        @mark(@result)
+
+  mark:(result)->
+    FileScanner.resultTest= new RegExp("[^ ]+\.(#{@fileExt})")
+    fileWatch=FileScanner.resultTest.exec(result)
+    if fileWatch
+      @files.push(fileWatch[0])
+
+
+  complete:->
+
+
+
+
+
+
+if module? and module.exports?
+  module.exports.FileScanner=FileScanner
+
+
+fs= require("fs");
+path = require("path")
+{FileScanner}=require("./FileScanner.js")
+{Include}=require("./Include.js")
+
+class FileFinder
+  constructor:(@path,@watch)->
+    @includeStack=[]
+    @exec()
+
+  exec:->
+    try
+      stats=fs.statSync(@getAbsolutePath())
+      if stats.isDirectory()
+        @directory()
+      else if stats.isFile()
+        @file()
+      else
+        throw new Error("No Idea how to Handle file not found")
+    catch e
+      e=new Error("Files doesn't exist")
+      e.required=@path
+      throw e
+
+  file:->
+    @includeStack ?= []
+    @fileScanner= new FileScanner(@getAbsolutePath(),@watch)
+
+    for f in @fileScanner.files
+      @includeStack.push new Include(path.resolve(@getDirectory(@getAbsolutePath()),f),@getAbsolutePath())
+
+
+
+  getDirectory:(f)->
+    path.dirname f
+
+  getAbsolutePath:->
+    path.resolve @path
+
+  getRelativePath:->
+    normal=path.normalize(@path)
+    path.resolve normal
+
+  isAbsolute:->
+    normal = path.normalize(@path)
+    absolute= path.resolve @path
+    normal is absolute
+
+
+
+if module? and module.exports
+  module.exports.FileFinder=FileFinder

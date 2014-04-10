@@ -70,6 +70,10 @@ if ((typeof module !== "undefined" && module !== null) && (module.exports != nul
   module.exports.Stacker = Stacker;
 }
 
+Stacker = require("./Stacker").Stacker;
+
+Include = require("./Include").Include;
+
 List = (function() {
   function List() {
     this.collection = [];
@@ -86,9 +90,6 @@ List = (function() {
         this.appendInclude(item);
       }
     }
-    console.log("______________BUILD_________________");
-    console.log(this.collection);
-    console.log("====================================");
     return this.build();
   };
 
@@ -104,7 +105,18 @@ List = (function() {
   };
 
   List.prototype.appendInclude = function(include) {
-    return this.collection.push(include);
+    var item, safe, _i, _len, _ref;
+    safe = true;
+    _ref = this.collection;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      item = _ref[_i];
+      if (item.required === include.required && item.caller === include.caller) {
+        safe = false;
+      }
+    }
+    if (safe) {
+      return this.collection.push(include);
+    }
   };
 
   List.prototype.build = function() {
@@ -141,8 +153,7 @@ List = (function() {
       g = gold[_n];
       this.graph.push(g);
     }
-    this.filter();
-    return console.log(this.graph);
+    return this.filter();
   };
 
   List.prototype.filter = function() {

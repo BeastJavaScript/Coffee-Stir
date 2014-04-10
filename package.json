@@ -1,0 +1,5 @@
+{
+    "name":"coffee-stir",
+    "version":"0.0.1",
+    "description":"This is a library to merge, watch and compile coffeescript files."
+}

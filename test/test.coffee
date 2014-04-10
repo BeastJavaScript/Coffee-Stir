@@ -1,3 +1,6 @@
+#include FileScanner.coffee
+#include FileScanner.js
+
 {Include,Stacker,List}=require("../bin/application")
 
 {TestCase,TestResult}=require("beast-test")

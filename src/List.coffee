@@ -1,3 +1,6 @@
+{Stacker}=require("./Stacker")
+{Include}=require("./Include")
+
 class List
   constructor:->
     @collection=[]
@@ -7,10 +10,6 @@ class List
         @appendStack(item)
       else if item instanceof Include
         @appendInclude(item)
-
-    console.log "______________BUILD_________________"
-    console.log @collection
-    console.log "===================================="
     @build()
 
 
@@ -19,7 +18,12 @@ class List
       @appendInclude(inc)
 
   appendInclude:(include)->
-    @collection.push include
+    safe=true
+    for item in @collection
+      if item.required is include.required and item.caller is include.caller
+        safe=false
+    if safe
+      @collection.push include
 
 
 
@@ -40,7 +44,6 @@ class List
     @graph.push s for s in silver
     @graph.push g for g in gold
     @filter()
-    console.log @graph
 
   filter:->
     temp=[]
