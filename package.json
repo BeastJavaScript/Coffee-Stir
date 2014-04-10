@@ -1,5 +1,12 @@
 {
     "name":"coffee-stir",
     "version":"0.0.1",
-    "description":"This is a library to merge, watch and compile coffeescript files."
+    "description":"This is a library to merge, watch and compile coffeescript files.",
+    "keyword":["coffeescript","coffee-script","preprocessor","bundle","beastjavascript","concat","merge","include","add"]
+    "bin":"bin/cli",
+    "author":"Shavauhn Gabay",
+    "devDependencies":{
+        "commander":"2.*",
+        "chokidar":"0.*"
+    }
 }
