@@ -3,8 +3,6 @@ chokidar = require('chokidar')
 program= require("commander")
 fs=require "fs"
 
-
-
 program.version("0.0.1")
 .option("-v, --verbose","Show messages")
 .option("-w, --watch","Watch Files")
