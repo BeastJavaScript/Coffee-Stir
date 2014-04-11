@@ -1,7 +1,9 @@
 {
   "name": "coffee-stir",
-  "version": "0.0.6",
-  "bin":{"npm":"index.js"},
+  "version": "0.0.7",
+  "bin": {
+    "npm": "index.js"
+  },
   "description": "This is a library to merge, watch and compile coffeescript files.",
   "keyword": [
     "coffeescript",
@@ -14,7 +16,7 @@
     "include",
     "add"
   ],
-    "author": {
+  "author": {
     "name": "Shavauhn Gabay",
     "email": "shavyg2@gmail.com",
     "url": "http://www.shavauhn.com"
