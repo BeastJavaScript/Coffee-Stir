@@ -1,6 +1,6 @@
 {
   "name": "coffee-stir",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is a library to merge, watch and compile coffeescript files.",
   "keyword": [
     "coffeescript",
