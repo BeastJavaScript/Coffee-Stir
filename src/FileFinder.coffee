@@ -1,8 +1,5 @@
-#include FileScanner.coffee
 fs= require("fs");
 path = require("path")
-{FileScanner}=require("./FileScanner.js")
-{Include}=require("./Include.js")
 
 class FileFinder
   constructor:(@path,@watch)->

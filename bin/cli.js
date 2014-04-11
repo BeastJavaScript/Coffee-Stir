@@ -135,10 +135,6 @@
 
   path = require("path");
 
-  FileScanner = require("./FileScanner.js").FileScanner;
-
-  Include = require("./Include.js").Include;
-
   FileFinder = (function() {
     function FileFinder(path, watch) {
       this.path = path;
@@ -209,10 +205,6 @@
   if ((typeof module !== "undefined" && module !== null) && module.exports) {
     module.exports.FileFinder = FileFinder;
   }
-
-  Stacker = require("./Stacker").Stacker;
-
-  Include = require("./Include").Include;
 
   List = (function() {
     function List() {
@@ -325,10 +317,6 @@
   chokidar = require('chokidar');
 
   program = require("commander");
-
-  FileFinder = require("./FileFinder").FileFinder;
-
-  List = require("./List").List;
 
   fs = require("fs");
 

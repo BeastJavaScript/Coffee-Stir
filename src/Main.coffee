@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 chokidar = require('chokidar')
 program= require("commander")
-{FileFinder}=require "./FileFinder"
-{List}=require "./List"
 fs=require "fs"
 
 

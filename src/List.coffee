@@ -1,6 +1,3 @@
-{Stacker}=require("./Stacker")
-{Include}=require("./Include")
-
 class List
   constructor:->
     @collection=[]
