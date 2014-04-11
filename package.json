@@ -13,7 +13,6 @@
     "include",
     "add"
   ],
-  "bin": "bin/cli.js",
   "author": {
     "name": "Shavauhn Gabay",
     "email": "shavyg2@gmail.com",
