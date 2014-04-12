@@ -1,4 +1,4 @@
-#include Stacker.coffee
+
 fs= require "fs"
 
 class FileScanner
