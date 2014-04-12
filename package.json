@@ -1,6 +1,6 @@
 {
   "name": "coffee-stir",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "bin": "./bin/cli.js",
   "description": "This is a library to merge, watch and compile coffeescript files.",
   "keyword": [
