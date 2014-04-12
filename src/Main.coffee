@@ -5,6 +5,7 @@ program= require("commander")
 {List}=require("./List")
 {FileFinder}=require "./FileFinder"
 fs=require "fs"
+path=require "path"
 
 program.version("0.0.1")
 .option("-v, --verbose","Show messages")
