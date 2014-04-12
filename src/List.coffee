@@ -1,3 +1,6 @@
+{Stacker}=require "./Stacker"
+{Include}=require "./Include"
+
 class List
   constructor:->
     @collection=[]
@@ -8,7 +11,6 @@ class List
       else if item instanceof Include
         @appendInclude(item)
     @build()
-
 
   appendStack:(stack)->
     for inc in stack.includes
@@ -22,8 +24,6 @@ class List
     if safe
       @collection.push include
 
-
-
   build:->
     @graph=[]
     bronze=[]
@@ -32,7 +32,8 @@ class List
     for inc in @collection
       bronze.push inc.caller
     for inc in @collection
-      silver.push inc.required
+      if inc.required isnt ""
+        silver.push inc.required
     for g in silver
       unless g in bronze
         gold.push g

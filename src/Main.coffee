@@ -2,6 +2,8 @@
 
 chokidar = require('chokidar')
 program= require("commander")
+{List}=require("./List")
+{FileFinder}=require "./FileFinder"
 fs=require "fs"
 
 program.version("0.0.1")
@@ -17,18 +19,20 @@ if program.args
 list= new List()
 fileFinder=[]
 added=[];
-unadded=[];
+unadded=[]
 recursive=(file)->
   if program.verbose
     console.log "parsing #{file}"
   try
     fileFinder.push new FileFinder(file,program.watch)
   catch e
-    console.log "in #{file}, file #{e.required} doesn't exist"
-  for f in fileFinder[fileFinder.length-1].includeStack
-    arguments.callee(f.required)
+    console.log "in #{file}, file '#{e.required}' doesn't exist"
 
-process.bundle=->
+  for f in fileFinder[fileFinder.length-1].includeStack
+    if f.required isnt ""
+      arguments.callee(f.required)
+
+bundle=->
   for bundle in fileFinder
     for stack in bundle.includeStack
       list.append stack
@@ -38,7 +42,7 @@ process.bundle=->
         unless stack.caller in added
           unadded.push stack.caller
 
-process.output=->
+output=->
   unless list.graph
     console.log "Nothing to output?"
     process.exit(0)
@@ -73,8 +77,8 @@ watcher=->
         watchMaster=chokidar.watch(file,{persistent:true})
         watchMaster.on("change",(newfile)=>
           recursive(newfile)
-          process.bundle()
-          process.output()
+          bundle()
+          output()
         )
 
       watchMaster.add file
@@ -82,9 +86,13 @@ watcher=->
     unadded=[]
     watchMaster.close()
 
-for f in file
-  recursive(f)
-process.bundle()
-process.output()
-watcher()
+try
+  for f in file
+    recursive(f)
+  bundle()
+  output()
+  watcher()
+catch e
+
+
 

@@ -1,5 +1,8 @@
-fs= require("fs");
+fs= require("fs")
 path = require("path")
+{FileScanner} = require("./FileScanner")
+{Include} = require("./Include")
+
 
 class FileFinder
   constructor:(@path,@watch)->
@@ -17,7 +20,7 @@ class FileFinder
         throw new Error("No Idea how to Handle file not found")
     catch e
       e=new Error("Files doesn't exist")
-      e.required=@path
+      e.required=@getAbsolutePath()
       throw e
 
   file:->
@@ -26,6 +29,8 @@ class FileFinder
 
     for f in @fileScanner.files
       @includeStack.push new Include(path.resolve(@getDirectory(@getAbsolutePath()),f),@getAbsolutePath())
+    if @fileScanner.files.length is 0
+      @includeStack.push new Include("",@getAbsolutePath())
 
   getDirectory:(f)->
     path.dirname f

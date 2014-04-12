@@ -1,3 +1,5 @@
 #!/bin/sh
-cd src
-coffee -c -j ../cli.js Include.coffee Stacker.coffee Filescanner.coffee FileFinder.coffee List.coffee Main.coffee
+
+basedir=$(dirname $0)
+cd $basedir
+coffee -wc -o bin src/Main.coffee src/FileFinder.coffee src/FileScanner.coffee src/Include.coffee src/List.coffee src/Include.coffee src/Stacker.coffee src/List.coffee &

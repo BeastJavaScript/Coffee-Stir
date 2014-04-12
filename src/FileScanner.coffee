@@ -33,10 +33,5 @@ class FileScanner
 
   complete:->
 
-
-
-
-
-
 if module? and module.exports?
   module.exports.FileScanner=FileScanner
