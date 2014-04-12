@@ -55,14 +55,18 @@ output=->
   for i in [list.graph.length-1 .. 0]
     item=list.graph[i]
     data=fs.readFileSync(item,{"encoding":"utf-8"})
+    data=data.replace(/# ?include .+/g,"")
+    data+="\n"
     if program.output
       if program.verbose
         console.log "writing file #{item}"
-      data=data.replace(/# ?include .+/g,"")
-      fs.appendFile(program.output,data+"\n")
+      fs.appendFile(program.output,data)
     else
       console.log data
-  console.log "wrote to #{program.output} complete"
+  if program.output
+    console.log "wrote to #{program.output} complete"
+  else
+    console.log "write completed"
 
 if file.length is 0
   console.log "No Input"
