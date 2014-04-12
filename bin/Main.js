@@ -94,7 +94,7 @@
       console.log("Outputing...");
     }
     if (program.output) {
-      fs.writeFile(program.output, "");
+      fs.writeFileSync(program.output, "");
     }
     for (i = _i = _ref = list.graph.length - 1; _ref <= 0 ? _i <= 0 : _i >= 0; i = _ref <= 0 ? ++_i : --_i) {
       item = list.graph[i];
@@ -127,10 +127,10 @@
 
   watcher = function() {
     var _i, _len;
-    if (program.verbose) {
-      console.log("watch has been added");
-    }
     if (program.watch) {
+      if (program.verbose) {
+        console.log("watch has been added");
+      }
       for (_i = 0, _len = unadded.length; _i < _len; _i++) {
         file = unadded[_i];
         if (typeof watcthMaster === "undefined" || watcthMaster === null) {

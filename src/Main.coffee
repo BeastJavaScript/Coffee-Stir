@@ -51,7 +51,7 @@ output=->
     console.log "Outputing..."
 
   if program.output
-    fs.writeFile(program.output,"")
+    fs.writeFileSync(program.output,"")
   for i in [list.graph.length-1 .. 0]
     item=list.graph[i]
     data=fs.readFileSync(item,{"encoding":"utf-8"})
@@ -73,9 +73,9 @@ if file.length is 0
 
 watchMaster=null;
 watcher=->
-  if program.verbose
-    console.log "watch has been added"
   if program.watch
+    if program.verbose
+      console.log "watch has been added"
     for file in unadded
       unless watcthMaster?
         watchMaster=chokidar.watch(file,{persistent:true})
