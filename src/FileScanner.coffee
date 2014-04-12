@@ -1,4 +1,4 @@
-
+path = require("path")
 fs= require "fs"
 
 class FileScanner
@@ -16,6 +16,11 @@ class FileScanner
     @parse()
     @complete()
 
+  getAbsolutePath:->
+    path.resolve @path
+
+  getDirectory:->
+    path.dirname @getAbsolutePath()
 
   parse:()->
     FileScanner.test ?= new RegExp("\ *?#include .*")
@@ -29,8 +34,9 @@ class FileScanner
     fileWatch=FileScanner.resultTest.exec(result)
     if fileWatch
       try
-        fs.statSync(fileWatch[0])
-        @files.push(fileWatch[0])
+        f=path.resolve(@getDirectory(),fileWatch[0])
+        fs.statSync(f)
+        @files.push(f)
       catch e
         console.log "in #{@path} : included file #{fileWatch[0]} doesn't exist"
 
