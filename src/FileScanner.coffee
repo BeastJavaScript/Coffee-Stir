@@ -4,7 +4,7 @@ fs= require "fs"
 class FileScanner
   constructor:(@path,@watch)->
     @files=[]
-    @fileExt=["coffee"]
+    @fileExt=["coffee","js"]
     @fileExt=@fileExt.join("|")
 
     @scan()
@@ -28,8 +28,11 @@ class FileScanner
     FileScanner.resultTest= new RegExp("[^ ]+\.(#{@fileExt})")
     fileWatch=FileScanner.resultTest.exec(result)
     if fileWatch
-      @files.push(fileWatch[0])
-
+      try
+        fs.statSync(fileWatch[0])
+        @files.push(fileWatch[0])
+      catch e
+        console.log "in #{@path} : included file #{fileWatch[0]} doesn't exist"
 
   complete:->
 

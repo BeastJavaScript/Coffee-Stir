@@ -31,7 +31,6 @@
         }
       } catch (_error) {
         e = _error;
-        console.log(e);
         e = new Error("Files doesn't exist");
         e.required = this.getAbsolutePath();
         throw e;

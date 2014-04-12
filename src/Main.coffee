@@ -26,7 +26,7 @@ recursive=(file)->
   try
     fileFinder.push new FileFinder(file,program.watch)
   catch e
-    console.log "in #{file}, file '#{e.required}' doesn't exist"
+    console.log "file '#{file}' doesn't exist"
 
   for f in fileFinder[fileFinder.length-1].includeStack
     if f.required isnt ""

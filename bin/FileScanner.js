@@ -9,7 +9,7 @@
       this.path = path;
       this.watch = watch;
       this.files = [];
-      this.fileExt = ["coffee"];
+      this.fileExt = ["coffee", "js"];
       this.fileExt = this.fileExt.join("|");
       this.scan();
     }
@@ -44,11 +44,17 @@
     };
 
     FileScanner.prototype.mark = function(result) {
-      var fileWatch;
+      var e, fileWatch;
       FileScanner.resultTest = new RegExp("[^ ]+\.(" + this.fileExt + ")");
       fileWatch = FileScanner.resultTest.exec(result);
       if (fileWatch) {
-        return this.files.push(fileWatch[0]);
+        try {
+          fs.statSync(fileWatch[0]);
+          return this.files.push(fileWatch[0]);
+        } catch (_error) {
+          e = _error;
+          return console.log("in " + this.path + " : included file " + fileWatch[0] + " doesn't exist");
+        }
       }
     };
 

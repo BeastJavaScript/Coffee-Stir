@@ -19,7 +19,6 @@ class FileFinder
       else
         throw new Error("No Idea how to Handle file not found")
     catch e
-      console.log e
       e=new Error("Files doesn't exist")
       e.required=@getAbsolutePath()
       throw e

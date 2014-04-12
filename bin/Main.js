@@ -38,7 +38,7 @@
       fileFinder.push(new FileFinder(file, program.watch));
     } catch (_error) {
       e = _error;
-      console.log("in " + file + ", file '" + e.required + "' doesn't exist");
+      console.log("file '" + file + "' doesn't exist");
     }
     _ref = fileFinder[fileFinder.length - 1].includeStack;
     _results = [];
