@@ -2,7 +2,7 @@ class Person
   constructor:(@name)->
 
   speak:->
-    console.log "hi my name is"
+    console.log "hi my name is #{@name}"
 
-  walk:->
-    "console.log walking"
+  run:->
+    "console.log fast running"

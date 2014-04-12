@@ -5,4 +5,5 @@ class Child extends Person
     super(name)
 
 
-
+  cry:->
+    console.log "cry"

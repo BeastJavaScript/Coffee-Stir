@@ -24,7 +24,7 @@ list= new List()
 fileFinder=[]
 added=[];
 unadded=[]
-recursive=(file)->
+recursive=(file) =>
   if program.verbose
     console.log "parsing #{file}"
   try
@@ -36,7 +36,7 @@ recursive=(file)->
     if f.required isnt ""
       arguments.callee(f.required)
 
-bundle=->
+process.bundle= =>
   for bundle in fileFinder
     for stack in bundle.includeStack
       list.append stack
@@ -46,7 +46,7 @@ bundle=->
         unless stack.caller in added
           unadded.push stack.caller
 
-output=->
+output= =>
   unless list.graph
     console.log "Nothing to output?"
     process.exit(0)
@@ -76,28 +76,29 @@ if file.length is 0
   console.log "No Input"
 
 watchMaster=null;
-watcher=->
+watcher= =>
   if program.watch
     if program.verbose
       console.log "watch has been added"
-    for file in unadded
+    console.log unadded
+    for file in unadded when file isnt ""
       unless watcthMaster?
         watchMaster=chokidar.watch(file,{persistent:true})
         watchMaster.on("change",(newfile)=>
           recursive(newfile)
-          bundle()
+          process.bundle()
           output()
         )
-
-      watchMaster.add file
-      added.push file
+      else
+        watchMaster.add file
+        added.push file
     unadded=[]
     watchMaster.close()
 
 try
   for f in file
     recursive(path.resolve(f))
-  bundle()
+  process.bundle()
   output()
   watcher()
 catch e
