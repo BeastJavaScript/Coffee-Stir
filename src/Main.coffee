@@ -17,9 +17,6 @@ file=[]
 if program.args
   file= program.args
 
-if program.output
-  program.output=path.resolve(program.output)
-
 list= new List()
 fileFinder=[]
 added=[];
