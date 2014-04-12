@@ -162,7 +162,7 @@
   try {
     for (_i = 0, _len = file.length; _i < _len; _i++) {
       f = file[_i];
-      recursive(f);
+      recursive(path.resolve(f));
     }
     bundle();
     output();

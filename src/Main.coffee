@@ -96,7 +96,7 @@ watcher=->
 
 try
   for f in file
-    recursive(f)
+    recursive(path.resolve(f))
   bundle()
   output()
   watcher()
