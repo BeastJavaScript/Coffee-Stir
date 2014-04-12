@@ -60,7 +60,7 @@ output=->
     if program.output
       if program.verbose
         console.log "writing file #{item}"
-      fs.appendFile(program.output,data)
+      fs.appendFileSync(program.output,data)
     else
       console.log data
   if program.output
