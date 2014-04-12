@@ -19,6 +19,10 @@
     "email": "shavyg2@gmail.com",
     "url": "http://www.shavauhn.com"
   },
+  "dependencies": {
+      "commander": "2.*",
+      "chokidar": "0.*"
+  },
   "devDependencies": {
     "commander": "2.*",
     "chokidar": "0.*"
