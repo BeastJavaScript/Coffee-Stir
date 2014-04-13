@@ -77,7 +77,6 @@ watcher= =>
   if program.watch
     if program.verbose
       console.log "watch has been added"
-    console.log unadded
     for file in unadded when file isnt ""
       unless watcthMaster?
         watchMaster=chokidar.watch(file,{persistent:true})
@@ -99,6 +98,3 @@ try
   output()
   watcher()
 catch e
-
-
-

@@ -140,7 +140,6 @@
         if (program.verbose) {
           console.log("watch has been added");
         }
-        console.log(unadded);
         for (_i = 0, _len = unadded.length; _i < _len; _i++) {
           file = unadded[_i];
           if (file !== "") {
