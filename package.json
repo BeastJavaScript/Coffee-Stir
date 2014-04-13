@@ -1,6 +1,6 @@
 {
   "name": "coffee-stir",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "bin": "./bin/cli.js",
   "description": "This is a library to merge, watch and compile coffeescript files.",
   "keyword": [
@@ -33,6 +33,6 @@
     "url": "https://github.com/BeastJavaScript/Coffee-Stir.git"
   },
   "scripts": {
-    "prepublish": "build-release.sh"
+    "prepublish": "build.sh"
   }
 }
