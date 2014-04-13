@@ -2,4 +2,4 @@
 
 basedir=$(dirname $0)
 cd $basedir
-coffee -wc -o bin src/*.coffee
+coffee -c -o bin src/*.coffee
