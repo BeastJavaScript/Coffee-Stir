@@ -66,8 +66,6 @@ output= =>
       console.log data
   if program.output
     console.log "wrote to #{program.output} complete"
-  else
-    console.log "write completed"
 
 if file.length is 0
   console.log "No Input"
